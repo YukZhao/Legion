@@ -1,0 +1,14 @@
+#ifndef FS_COMPAT_H
+#define FS_COMPAT_H
+
+#if __has_include(<filesystem>)
+#include <filesystem>
+namespace filesystem = std::filesystem;
+#elif __has_include(<experimental/filesystem>)
+#include <experimental/filesystem>
+namespace filesystem = std::experimental::filesystem;
+#else
+#error "No filesystem implementation is available"
+#endif
+
+#endif

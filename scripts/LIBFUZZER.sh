@@ -5,7 +5,10 @@ MAX_SEED_BYTES="${LEGION_MAX_SEED_SIZE_BYTES:-1048576}"
 
 DEFAULT_LIBFUZZER_CC="clang"
 DEFAULT_LIBFUZZER_CXX="clang++"
-if command -v clang-12 >/dev/null 2>&1 && command -v clang++-12 >/dev/null 2>&1; then
+if command -v clang-15 >/dev/null 2>&1 && command -v clang++-15 >/dev/null 2>&1; then
+	DEFAULT_LIBFUZZER_CC="clang-15"
+	DEFAULT_LIBFUZZER_CXX="clang++-15"
+elif command -v clang-12 >/dev/null 2>&1 && command -v clang++-12 >/dev/null 2>&1; then
 	DEFAULT_LIBFUZZER_CC="clang-12"
 	DEFAULT_LIBFUZZER_CXX="clang++-12"
 elif command -v clang-8 >/dev/null 2>&1 && command -v clang++-8 >/dev/null 2>&1; then

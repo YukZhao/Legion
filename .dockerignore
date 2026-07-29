@@ -1,0 +1,14 @@
+.git
+.docker-config
+build
+code_*
+run_*
+global
+initial
+archive
+saved_crashes
+*.report
+legion.log
+*.o
+src/legion/legion
+bin/libinstrumentor.a
